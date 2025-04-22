@@ -1,0 +1,36 @@
+from collections import defaultdict
+
+def kelompokkan_plat():
+    plat_dict = {}  # Menyimpan nomor plat dan nomor kelompok
+    kelompok_count = 1  # Mulai dengan kelompok 1
+    plat_count = defaultdict(int)  # Menghitung berapa kali plat dimasukkan
+
+    while True:
+        plat = input(f"Masukkan nomor plat kendaraan (4 angka saja) atau ketik '.' untuk selesai: ").strip()
+
+        # Berhenti jika input adalah '.'
+        if plat == ".":
+            break
+
+        # Validasi input agar hanya menerima 4 angka
+        if not plat.isdigit() or len(plat) != 4:
+            print("Nomor plat harus berupa 4 angka, coba lagi.")
+            continue
+
+        # Cek apakah plat sudah ada di kelompok sebelumnya
+        if plat not in plat_dict:
+            plat_dict[plat] = kelompok_count
+            plat_count[plat] += 1  # Menambah jumlah rit
+            print(f"Plat {plat} dimasukkan ke dalam kelompok {kelompok_count}")
+            kelompok_count += 1  # Buat kelompok baru untuk plat berikutnya
+        else:
+            plat_count[plat] += 1  # Menambah jumlah rit
+            print(f"Plat {plat} sudah ada dalam kelompok {plat_dict[plat]}")
+
+    # Menampilkan hasil kelompok dan jumlah rit
+    print("\nRekap pengelompokan plat kendaraan:")
+    for plat, kelompok in plat_dict.items():
+        print(f"Kelompok {kelompok}: Plat {plat} memiliki {plat_count[plat]} rit")
+
+if __name__ == "__main__":
+    kelompokkan_plat()
