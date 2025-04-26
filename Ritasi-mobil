@@ -1,0 +1,52 @@
+import csv
+from datetime import datetime
+
+kelompok = {}
+rekap = {}
+
+print("Masukkan nomor plat (4 angka). Ketik '.' untuk selesai.")
+
+while True:
+    plat = input("Nomor plat: ").strip()
+
+    if plat == ".":
+        break
+
+    if not plat.isdigit() or len(plat) != 4:
+        print("Nomor plat harus 4 angka.")
+        continue
+
+    if plat in kelompok:
+        print(f"Masuk kelompok {kelompok[plat]}")
+        rekap[plat] += 1
+    else:
+        nomor_kelompok = len(kelompok) + 1
+        kelompok[plat] = nomor_kelompok
+        rekap[plat] = 1
+        print(f"Plat baru. Masuk kelompok {nomor_kelompok}")
+
+# Tampilkan rekap di terminal
+print("\nRekap Pengelompokan:")
+data_csv = [["Kelompok", "Plat Nomor", "Jumlah Rit"]]
+total_rit = 0
+for plat, urutan in kelompok.items():
+    jumlah = rekap[plat]
+    baris = f"Kelompok {urutan}: plat {plat} sebanyak {jumlah} rit"
+    print(baris)
+    data_csv.append([f"Kelompok {urutan}", plat, jumlah])
+    total_rit += jumlah
+
+# Tampilkan total rit di terminal
+print(f"\nTotal rit hari ini adalah: {total_rit}")
+data_csv.append(["", "Total Rit:", total_rit])
+
+# Buat nama file CSV dengan timestamp
+timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+nama_file_csv = f"rekap_nomor_plat_{timestamp}.csv"
+
+# Tulis ke file CSV
+with open(nama_file_csv, mode='w', newline='') as csvfile:
+    writer = csv.writer(csvfile)
+    writer.writerows(data_csv)
+
+print(f"\nRekap telah disimpan di file '{nama_file_csv}'")
