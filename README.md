@@ -1,10 +1,10 @@
-#Vehicle Trip Sheet Recap Program
+# Vehicle Trip Sheet Recap Program
 
-##Overview
+## Overview
 
 I developed a simple program designed to efficiently organize vehicle trip sheets by license plate number.
 
-##Key Benefits
+## Key Benefits
 
 **Significant Time Savings:**
 Manually organizing 180 trip sheets typically takes approximately 3.5 hours.
@@ -12,7 +12,7 @@ With this program, the same task can be completed in just 50 minutes, achieving 
 **Reduced Workload and Stress:**
 Eliminates the need to manually search through and memorize plate numbers, allowing the program to automatically assign groupings.
 
-##How It Works
+## How It Works
 
 1. Run the program using Visual Studio Code (VSCode), PyCharm, or any Python-compatible environment.
 2. Input each vehicle’s license plate number as prompted.
