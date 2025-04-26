@@ -22,18 +22,18 @@ Eliminates the need to manually search through and memorize plate numbers, allow
 6. A summary report will be generated and saved automatically in a CSV file for future reference.
 
 ---
-
+## Ringkasan
 Saya membuat sebuah program sederhana untuk melakukan rekap ritasi mobil.
-
 Program ini akan menyusun setiap surat jalan berdasarkan nomor plat kendaraan. 
 
-Keuntungan :
-1. Efisiensi waktu sebesar 70-80%. 
+## Keuntungan :
+**1. Efisiensi waktu sebesar 70-80%**
 	 Secara manual menyusun 180 surat jalan membutuhkan waktu 3.5 jam.
-   Dengan program ini, tugas tersebut hanya membutuh kan waktu 50 menit.
-2. Mengurangi stress akibat mengingat dan mencari nomor pada tumpukan surat jalan karena program yang akan melakukannya.
+   Dengan program ini, tugas tersebut hanya membutuhkan waktu 50 menit.
+**2. Mengurangi stress** 
+	Tidak perlu mengingat dan mencari nomor plat pada tumpukan surat jalan. Program akan melakukan kegiatan tersebut.
 
-Cara kerja :
+## Cara kerja :
 1. Jalankan program pada vscode atau pycharm atau python runner lainnya.
 2. Ketik nomor plat dari masing masing surat jalan satu satu sesuai arahan program.
 3. Program akan memberikan nomor kelompok pada setiap plat yang diketik.
